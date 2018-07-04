@@ -14,7 +14,6 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Atomic Witchcraft
-email: emily.v.kahl@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
     Hi! My name's Emily and I'm a PhD student in theoretical physics, working on numerical and
     computational techniques in atomic physics. I am co-author of the AMBiT software suite for 
