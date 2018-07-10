@@ -1,4 +1,7 @@
-# Some thoughts on high-performance computing
+---
+title: "Some thoughts on high-performance computing"
+author: "Emily Kahl"
+---
 My research group recently open-sourced our kickass atomic structure code 
 [AMBiT](https://github.com/drjuls/AMBiT). AMBiT is my baby - I spent the last year and a bit getting it
 fit for production, which is a bit less than half of my PhD. Along with the usual bug hunting and

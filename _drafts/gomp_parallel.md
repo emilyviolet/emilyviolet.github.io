@@ -108,6 +108,17 @@
 - Keeps idle threads in a logical *pool*: threads get created, do work, then return to the pool once
   they're done. Threads only need to be created once per program, then stay "alive" until the program is
   finished.
+
+"
+Finally, OpenMP has one more feature that we need to know about: thread pooling. As I said above,
+creating and destroying threads can be quite expensive operations (at least on most CPUs), so we want to
+do as little of these as possible. OpenMP handles this by keeping threads around in a *pool*, even when
+they're not actively doing work. Threads get created upon entering the first parallel region of the
+program, do some work, then get released back into the pool to sit idle until there's more work to do.
+The upshot of this is that threads only get created and destroyed once - the overhead is spread out
+across the programs whole runtime, at the cost of extra thread-management complexity. 
+"
+
 - Thread creation and destruction has some non-zero overhead (which needs to be done by the OS), so
   re-using threads between parallel sections gives significant performance gains.
 - We can see this in action with GDB. Add an extra parallel region to hello.c:
