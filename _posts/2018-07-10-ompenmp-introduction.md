@@ -2,9 +2,7 @@
 title: "OpenMP internals part 0: a brief introduction to OpenMP"
 author: "Emily Kahl"
 ---
-
-Like I said [last 
-time](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.217.9615&rep=rep1&type=pdf), one of my 
+One of my 
 goals with this whole blog thing is to write things down as I teach myself the internals of
 [OpenMP](https://www.openmp.org/). Before I start writing this up, though, I think I should
 at least write up a brief, high-level introduction for anyone who's never used OpenMP before. There's
