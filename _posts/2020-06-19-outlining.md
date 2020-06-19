@@ -144,12 +144,10 @@ Now, let's go line-by-line through the actual body of the function, which I have
 
 ```C
 void                                                                           
-GOMP_parallel (void (*fn) (void *), void *data, unsigned num_threads,          
-           unsigned int flags)                                                 
+GOMP_parallel (void (*fn) (void *), void *data, unsigned num_threads, unsigned int flags)                                                 
 {                                                                              
   num_threads = gomp_resolve_num_threads (num_threads, 0);                     
-  gomp_team_start (fn, data, num_threads, flags, gomp_new_team (num_threads),  
-           NULL);                                                              
+  gomp_team_start (fn, data, num_threads, flags, gomp_new_team (num_threads), NULL);                                                              
   fn (data);                                                                   
   ialias_call (GOMP_parallel_end) ();                                          
 }  
@@ -337,6 +335,7 @@ which I want to dig into in the next few posts:
 2. What does an outlined function look like?
 3. How is work assigned to threads? How does OpenMP manage to keep idle threads
    ``alive'', and still manage to pass new workloads to them?
+
 In order to answer the first two points, we're going to need to dig into the 
 innards of gcc and learn a little bit about the nitty-gritty of compilation. 
 I'm pretty dang excited about this - I've always been interested in the theory
